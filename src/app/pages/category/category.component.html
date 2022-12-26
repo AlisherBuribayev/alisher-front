@@ -1,0 +1,40 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="book-list section">
+    <div class="container">
+      <div class="book-list__header section__header">
+        <div class="row">
+          <div class="col">
+            <h3 class="book-list__title section__title">
+              Результаты по категории "{{categoryName}}"
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div
+          *ngFor="let book of books"
+          class="col-sm-12 col-md-6 col-lg-4 col-xl-3"
+        >
+          <div class="book-card">
+            <div class="book-card__content">
+              <img
+                class="book-card__image"
+                src="{{book.image}}"
+                alt=""
+              />
+              <p style="cursor: pointer" routerLink="/product/{{book.id}}" class="book-card__title">{{book.name}}</p>
+              <p class="book-card__description">{{book.desc}}</p>
+              <div class="book-card__basket">
+                <button (click)="addToBasket(book)" class="book-card__button btn">в корзину</button>
+                <a class="like-btn" style="cursor: pointer; margin-left: 5px;"  (click)="addToFavorite(book)"><img src="assets/heart.svg" alt="" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

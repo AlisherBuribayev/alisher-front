@@ -1,0 +1,17 @@
+
+footer{
+  margin-top: 20px;
+  background-color: #333333;
+}
+
+footer a{
+  text-decoration: none;
+}
+footer a{
+  color: white;
+  transition: all .3s;
+}
+
+footer a:hover{
+  color: #e16a00;
+}

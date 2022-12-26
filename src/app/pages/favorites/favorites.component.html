@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="card">
+    <div class="row">
+      <div class="col-md-12 cart">
+        <div class="title">
+          <div class="row">
+            <div class="col"><h4><b>Favorite Carts</b></h4></div>
+            <div class="col align-self-center text-right text-muted">{{ books.length }} items</div>
+          </div>
+        </div>
+        <div class="row border-top border-bottom" *ngFor="let book of books; trackBy: trackItem">
+          <div class="row main align-items-center">
+            <div class="col-2"><img class="img-fluid" [src]="book['image']"></div>
+            <div class="col">
+              <div class="row text-muted">{{book["author"]}}</div>
+              <div class="row">{{book["name"]}}</div>
+            </div>
+            <div class="col-2 card__desc">{{ book["desc"] }}</div>
+            <div class="col-2">
+              <button class="btn" (click)="removeFromFavorites(book)" title="Remove from Favorite">&#10005;</button>
+            </div>
+          </div>
+        </div>
+        <div class="back-to-shop"><a href="#" style="cursor: pointer;">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

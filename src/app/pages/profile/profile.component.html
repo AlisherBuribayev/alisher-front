@@ -1,0 +1,143 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8" style="margin: auto 0">
+      <div class="auth_block">
+        <div
+          class="p-4"
+          style="font-size: 28px; text-align: center; font-weight: bold"
+        >
+          Профиль
+        </div>
+
+        <div class="card-body">
+          <div class="row mb-3">
+            <label for="name" class="col-md-4 col-form-label text-md-end">
+              Имя
+            </label>
+
+            <div class="col-md-6">
+              <input
+                id="name"
+                type="text"
+                class="form-control"
+                name="name"
+                value="{{ profile.userInfo.name }}"
+                readonly
+                autocomplete="name"
+                autofocus
+              />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="surname" class="col-md-4 col-form-label text-md-end">
+              Фамилия
+            </label>
+
+            <div class="col-md-6">
+              <input
+                id="surname"
+                type="text"
+                class="form-control"
+                name="surname"
+                value="{{ profile.userInfo.surname }}"
+                readonly
+                autocomplete="surname"
+                autofocus
+              />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="email" class="col-md-4 col-form-label text-md-end">
+              Эл. почта
+            </label>
+
+            <div class="col-md-6">
+              <input
+                id="email"
+                type="email"
+                class="form-control"
+                name="email"
+                value="{{ profile.userInfo.email }}"
+                readonly
+                autocomplete="email"
+              />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="phone" class="col-md-4 col-form-label text-md-end">
+              Телефон
+            </label>
+
+            <div class="col-md-6">
+              <input
+                id="phone"
+                type="text"
+                class="form-control"
+                name="phone"
+                value="{{ profile.userInfo.phone }}"
+                readonly
+                autocomplete="phone"
+              />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label
+              for="graduate_year"
+              class="col-md-4 col-form-label text-md-end"
+            >
+              Город
+            </label>
+
+            <div class="col-md-6">
+              <input
+                id="graduate_year"
+                type="text"
+                class="form-control"
+                name="graduate_year"
+                value="{{ profile.userInfo.country }}"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label
+              for="graduate_year"
+              class="col-md-4 col-form-label text-md-end"
+            >
+              План подписки
+            </label>
+
+            <div class="col-md-6">
+              <input
+                id="graduate_year"
+                type="text"
+                class="form-control"
+                name="graduate_year"
+                value="{{ profile.userSubs[0].name }}"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div
+              class="col-md-4 text-md-end"
+            >
+
+            </div>
+            <div class="col-md-6">
+              <button class="btn">
+                Изменить
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

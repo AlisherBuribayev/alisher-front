@@ -1,0 +1,5 @@
+.navbar-profile {
+  display: flex;
+  gap: 16px;
+  margin: 0 12px;
+}

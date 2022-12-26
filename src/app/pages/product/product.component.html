@@ -1,0 +1,25 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="card">
+    <div class="container-fliud">
+      <div class="wrapper row">
+        <div class="preview col-md-6">
+          <div class="preview-pic tab-content">
+            <div class="tab-pane active" id="pic-1"><img src="{{product.image}}" /></div>
+          </div>
+        </div>
+        <div class="details col-md-6">
+          <h3 class="product-title">{{product.name}}</h3>
+          <p class="product-description">{{product.desc}}</p>
+          <h4>Автор: {{product.author}}</h4>
+          <h4>Категория: {{product.category.name}}</h4>
+          <div class="book-card__basket mt-4">
+            <button (click)="addToBasket(product)" class="book-card__button btn">в корзину</button>
+            <a style="cursor: pointer; margin-left: 5px;"  (click)="addToFavorite(product)" class="like-btn"><img src="assets/heart.svg" alt="" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

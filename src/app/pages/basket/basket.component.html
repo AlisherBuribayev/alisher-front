@@ -1,0 +1,105 @@
+<app-nav></app-nav>
+
+<div class="container">
+  <div class="card">
+    <div class="row">
+      <div class="col-md-12 cart">
+        <div class="title">
+          <div class="row">
+            <div class="col">
+              <h4><b>Shopping Cart</b></h4>
+            </div>
+            <div class="col align-self-center text-right text-muted">
+              {{ books.length }} items
+            </div>
+          </div>
+        </div>
+        <div
+          class="row border-top border-bottom"
+          *ngFor="let book of books; trackBy: trackItem"
+        >
+          <div class="row main align-items-center">
+            <div class="col-2">
+              <img class="img-fluid" [src]="book['image']" />
+            </div>
+            <div class="col">
+              <div class="row text-muted">{{ book["name"] }}</div>
+              <div class="row">{{ book["desc"] }}</div>
+            </div>
+            <div class="col-2">
+              <button class="btn" (click)="removeFromBasket(book)">
+                &#10005;
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col back-to-shop">
+            <a href="#" style="cursor: pointer">
+              &leftarrow;
+              <span class="text-muted">Back to shop</span>
+            </a>
+          </div>
+          <div class="col">
+            <button
+              class="btn"
+              type="button"
+              data-toggle="modal"
+              data-target="#exampleModal"
+              (click)="activateModal()"
+            >
+              Доставить
+            </button>
+
+            <!-- Modal -->
+            <div
+              class="d-modal"
+              [ngClass]="[isModalActive ? 'd-modal-active' : '']"
+              id="exampleModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Напишите адрес ваш адрес
+                    </h5>
+                    <button
+                      type="button"
+                      class="close d-modal-close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                      (click)="closeModal()"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <input
+                      class="search__input m-1"
+                      type="text"
+                      placeholder="Адрес"
+                      name="location"
+                      [(ngModel)]="location"
+                    />
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" (click)="sendToDeliver()">
+                      Оставить заявку
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div [ngClass]="[isModalActive ? 'bg-dark' : '']"></div>
+</div>
+
+<app-footer></app-footer>

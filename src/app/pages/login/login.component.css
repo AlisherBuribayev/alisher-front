@@ -1,0 +1,48 @@
+.card{
+  width: 400px;
+  border: none;
+}
+
+.nav-pills{
+  display:table !important;
+  width:100%;
+}
+
+.nav-pills .nav-link {
+  cursor: pointer;
+  color: #E31936;
+  background-color: #ffc9d2;
+  border-color: #ffc9d2;
+}
+
+.nav-pills .nav-link.active {
+  border-radius: 0px;
+  color: white;
+  background-color: #E31936;
+  border-color: #E31936;
+}
+
+.nav-item{
+  display: table-cell;
+}
+
+
+.form{
+  padding: 10px;
+  height: 300px;
+}
+
+.form input{
+  margin-bottom: 12px;
+  border-radius: 3px;
+}
+
+
+.form input:focus{
+  box-shadow: none;
+}
+
+
+.form button{
+  margin-top: 20px;
+}
